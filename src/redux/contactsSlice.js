@@ -5,7 +5,8 @@ import { fetchContacts, addContact, deleteContact } from './contactsOperations';
 const initialState = {
     items: [],
     isLoading: false,
-    error: null
+    error: null,
+    filter: ''
 };
 
 // const initialState = {
@@ -30,15 +31,15 @@ const handleRejected = (state, action) => {
 const contactsSlice = createSlice({
     name: 'contacts',
     initialState,
-    reducers: {
-        addContact: (state, action) => {
-            state.contacts.push(action.payload)
-        },
-        deleteContact: (state, action) => {
-            state.contacts = state.contacts.filter(
-                contact => contact.id !== action.payload);
-        },
-    },
+    // reducers: {
+    //     addContact: (state, action) => {
+    //         state.contacts.push(action.payload)
+    //     },
+    //     deleteContact: (state, action) => {
+    //         state.contacts = state.contacts.filter(
+    //             contact => contact.id !== action.payload);
+    //     },
+    // },
     extraReducers: builder => {
         builder
             .addCase(fetchContacts.pending, handlePending)
