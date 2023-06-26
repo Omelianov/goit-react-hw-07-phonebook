@@ -8,13 +8,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
 
-// const initialValues = {
-//   id: '',
-//   name: '',
-//   phone: '',
-// };
-
-
 const AddForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
